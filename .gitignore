@@ -1,0 +1,16 @@
+.ipynb_checkpoints
+*.egg-info
+*.ipynb
+*eps-converted-to.pdf
+*.aux
+*.bbl
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+dissertation/output/
+dissertation/figures/signature.*
+supplements/output/
+supplements/diary_*.tex

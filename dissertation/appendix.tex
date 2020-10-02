@@ -1,0 +1,20 @@
+\chapter{Appendix}
+
+In order to create the plots and calculate results for this project we had to produce code through python language software in Jupyter lab. The repositories used were saved into the Github page Computer-Oriented Geoscience Lab ``compgeolab'' with the ones which provided all data presented named and described below:
+\\ \footnotesize
+\\
+data/MarsTopo719.shape - Topography data file \\
+data/gmm3\_120\_sha.tab - Gravity data file\\
+environment.yml -directory that contains the collection of conda packages installed \\
+prepare-gravity-grids.ipynb - Code required in order to export the now usable grids to a netCDF file \\
+functions.py - Contains the utility functions for this project \\
+mars-bouguer-density.ipynb - Code used to performed the calculations plotting figures for all regions used \\
+Further-analysed-density.ipynb - Code used for plotting the figures whch were further analysed \\
+
+\normalsize In order to test our code to see if the calculations would acquire an accurate density value we recreated the results of Carartori Tontini [2007]. 
+\begin{figure}[H]
+	\centering
+	\subfloat{\includegraphics[width=65mm]{Figures/Caratori Tontini Recreation}\label{fig:C T recreation}}
+	\subfloat{\includegraphics[width=71mm]{Figures/Density from Caratori Tontini}\label{fig:Density from C T}}
+\end{figure}
+The plots created obtained density value of $2300 kg/m^3$. This is slightly less than the $2400 kg/m^3$ from the paper but, this could be a consequence of using our gravity grid at a height of 10 km instead of 0 km. Despite that it does represent that to calculation performed in the code is successful in finding an accurate optimal Bouguer density; therefore, we can have confidence in the results shown in this Thesis.

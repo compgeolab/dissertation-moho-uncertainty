@@ -1,0 +1,129 @@
+% Dissertation template for the Geophysics programs of the University of
+% Liverpool.
+%
+% This document sets the configuration and assembles the individual chapters
+% (stored in separate .tex files). See the declaration.tex file for
+% instructions on including scanned signature.
+
+% Fill these in and they will be set throughout the document
+\newcommand{\Name}{Yoür Name}  % Note that you can use any Unicode character
+\newcommand{\Degree}{Bachelor of Science in the subject of Geophysics (Geology)}
+\newcommand{\Title}{Title of the dissertation}
+
+\documentclass[11pt,a4paper,oneside]{book}
+% Full Unicode support for non-ASCII characters
+\usepackage[utf8]{inputenc}
+% Typographical rules for English
+\usepackage[english]{babel}
+% Handling figures in PNG, JPG, PDF, etc
+\usepackage{graphicx}
+% Better and more extensive maths
+\usepackage{amsmath}
+% Set the borders of the page
+\usepackage[width=150mm,top=40mm,bottom=30mm,headsep=10mm,headheight=5mm]{geometry}
+% Include links and metadata in PDFs
+\usepackage[pdftex,colorlinks=true]{hyperref}
+% Define command to insert month name and year as date
+\usepackage{datetime}
+% Nice styling for headers and footers
+\usepackage{fancyhdr}
+% To control the style of section titles
+\usepackage{titlesec}
+% Add the bibliography to the table of contents
+\usepackage[nottoc,chapter]{tocbibind}
+% Formatting the bibliography
+\usepackage[round]{natbib}
+% To insert dummy text into this template. Can be removed.
+\usepackage{lipsum}
+
+% Define a date format that is just the month and year
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Customize how Chapter headings are displayed
+\titleformat{\chapter}[display]{\normalfont\bfseries\centering}{\vspace{-2cm}\LARGE Chapter \thechapter}{5pt}{\Huge}
+
+% Setup metadata for the PDF and link colour
+\hypersetup{
+    pdftitle={\Title},
+    pdfauthor={\Name},
+    pdfsubject={Dissertation submitted for the degree of \Degree{}},
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=blue
+}
+
+% Set fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\fontsize{10pt}{0}\selectfont\itshape \nouppercase\leftmark}
+\chead{}
+\rhead{\fontsize{9pt}{0}\selectfont \thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% Increase the line spacing
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+  % Gather all of the .tex files for individual sections into a single
+  % document. To add text and edit, open the individual files added with the
+  % "\include{}" command.
+
+  \pagestyle{plain}
+
+  % You don't need to edit the cover, it will be generated from the variables
+  % set at the very top of this document.
+  \include{cover}
+
+  \frontmatter
+
+  % You need to edit the declaration to include an image of your signature. See
+  % the declaration.tex file for instructions.
+  \include{declaration}
+
+  \include{acknowledgements}
+
+  % Add your abstract to the "abstract.tex" file. DO THIS PART LAST. It's
+  % easier to write the abstract in the end (and do a good job of it).
+  \include{abstract}
+
+  % Table of contents and lists of figures and tables are automatically
+  % generated (yay!)
+  \tableofcontents
+  \listoffigures
+  \listoftables
+
+  \pagestyle{fancy}
+
+  \mainmatter
+
+  % These are the actual chapters of your dissertation. Add your text, figures,
+  % tables, etc to these .tex files.
+  \include{introduction}
+  \include{methods}
+  \include{results}
+  \include{summary}
+  \include{futurework}
+
+  \pagestyle{plain}
+
+  % Use the American Geophysical Union citation style
+  \bibliographystyle{agu}
+  % Use References instead of Bibliography (the default)
+  \renewcommand{\bibname}{References}
+  % The References section is automatically populated from the cited entries of
+  % the references.bib file
+  \bibliography{references}
+
+  % If you want to have an appendix, uncomment these two lines and add an
+  % appendix.tex file with the text. Sections declared in it will automatically
+  % be numbered differently.
+
+  %\appendix
+  %\include{appendix}
+
+\end{document}
