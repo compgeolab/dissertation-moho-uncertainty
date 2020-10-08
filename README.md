@@ -1,6 +1,6 @@
 # Estimating the accuracy of Moho depth estimates from gravity inversion
 
-**Author: Aidan Hernaman**
+**Author: [Aidan Hernaman](https://github.com/AidanHernaman)**
 
 Supervisor: [Leonardo Uieda](https://www.leouieda.com)
 
