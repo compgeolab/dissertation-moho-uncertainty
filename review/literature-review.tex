@@ -1,0 +1,122 @@
+% Literature review template for the Geophysics programs of the University of
+% Liverpool.
+%
+% This document sets the configuration and contains the main text of the
+% review. References are managed by BibTex and kept in references.bib.
+
+% Fill these in and they will be set throughout the document
+\newcommand{\Name}{Yoür Name}  % Note that you can use any Unicode character
+\newcommand{\Title}{Title of the literature review}
+
+\documentclass[11pt,a4paper,onecolumn,oneside]{article}
+% Full Unicode support for non-ASCII characters
+\usepackage[utf8]{inputenc}
+% Typographical rules for English
+\usepackage[english]{babel}
+% Handling figures in PNG, JPG, PDF, etc
+\usepackage{graphicx}
+% Better and more extensive maths
+\usepackage{amsmath}
+% Set the borders of the page
+\usepackage[width=155mm,top=35mm,bottom=25mm,headsep=10mm,headheight=5mm]{geometry}
+% Include links and metadata in PDFs
+\usepackage[pdftex,colorlinks=true]{hyperref}
+% Define command to insert month name and year as date
+\usepackage{datetime}
+% Nice styling for headers and footers
+\usepackage{fancyhdr}
+% Formatting the bibliography
+\usepackage[round]{natbib}
+% To insert dummy text into this template. Can be removed.
+\usepackage{lipsum}
+
+% Define a date format that is just the month and year
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Setup metadata for the PDF and link colour
+\hypersetup{
+    pdftitle={\Title},
+    pdfauthor={\Name},
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=blue
+}
+
+% Set fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\fontsize{10pt}{0}\selectfont\itshape Literature Review -- \Name{}}
+\chead{}
+\rhead{\fontsize{9pt}{0}\selectfont \thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Increase the line spacing
+\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+
+
+% Make the title section
+\thispagestyle{empty}
+\begin{center}
+  {\LARGE \Title{}}
+  \\[0.3cm]
+  {\large \Name{}}
+  \\[0.3cm]
+  {\monthyear\today}
+\end{center}
+
+
+% Sections with an * aren't numbered
+\section*{Abstract}
+
+% Your abstract goes here.
+% Remove all the "lipsum" lines below, they're just used to generate filler
+% text.
+\lipsum[1]
+
+
+
+\section{Introduction}
+
+The citations and bibliography are automatically handled by
+BibTeX and the \texttt{natbib} package. Place the bibliographic information for
+the references in the \texttt{references.bib} file and then cite your
+references in the text (see below). The References section will be generated
+automatically. To get the bibliographic information for papers, use the
+\url{https://www.doi2bib.org/} website (DOIs are unique identifiers for
+scientific publications, datasets, etc; you can find them in the paper PDFs or
+publisher websites).
+
+This is how you make citations: in the text \cite{Parker1973} or with
+parenthesis \citep{Parker1973}. See
+\url{https://www.overleaf.com/learn/latex/Natbib_citation_styles} for more
+information.
+
+See the files in the \texttt{dissertation} folder for examples of how to
+included and cross-reference tables, figures, and equations.
+
+
+\section{Some section}
+
+\lipsum
+
+
+\section{Conclusions}
+
+\lipsum[1-2]
+
+
+% Use the American Geophysical Union citation style
+\bibliographystyle{agu}
+% Use References instead of Bibliography (the default)
+\renewcommand{\bibname}{References}
+% The References section is automatically populated from the cited entries of
+% the references.bib file
+\bibliography{references}
+
+\end{document}
