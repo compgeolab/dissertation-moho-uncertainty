@@ -12,6 +12,6 @@ In this project, we will investigate the use of cross-validation analysis to est
 
 ## Notes
 
-WRITE HERE ANY NOTES OR INSTRUCTIONS YOU MAY HAVE.
-TREAT THIS AS A PLACE TO PUT REMINDERS FOR YOUR FUTURE
-SELF (HOW TO RUN SOMETHING, LINKS TO RESOURCES, ETC).
+- Explantation of Bott's method (overview) for methodology.
+- Make sure I've got explanation of cross validation correct.
+- Are you able to calculate unmodelled masses from uncertainty estimates?
