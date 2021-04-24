@@ -12,7 +12,4 @@ In this project, we will investigate the use of cross-validation analysis to est
 
 ## Notes
 
-- Explantation of Bott's method (overview) for methodology.
 - Make sure I've got explanation of cross validation correct.
-- Are you able to calculate unmodelled masses from uncertainty estimates?
-- Introduction, why are we doing this? Why is the Moho important?
