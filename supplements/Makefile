@@ -9,7 +9,7 @@ AUTHOR = AidanHernaman
 OUTDIR = output
 DIARY_SRC = diary.tex
 DIARY_PDF = $(patsubst %.tex, %.pdf, $(DIARY_SRC))
-LOG_FORMAT = SECTIONPLACEHOLDER*{%ai}%n%n%B%n
+LOG_FORMAT = {%ai}%n%n%B%n
 AUX_TEX = diary_entries.tex diary_author.tex
 ARCHIVE = dissertation-archive.zip
 LATEX_COMPILER = latexmk -pdf -outdir=$(OUTDIR)
@@ -49,7 +49,6 @@ diary_entries.tex: $(OUTDIR)/git_log.txt
 	sed "s/%/\\\\%/g" | \
 	sed "s/\* //g" | \
 	sed "s/[_]/\\\\textunderscore\{\}/g" | \
-	sed "s/SECTIONPLACEHOLDER/\\\\section/g" | \
 	cat	> $@;
 
 diary_author.tex:
