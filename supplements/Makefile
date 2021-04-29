@@ -3,13 +3,13 @@
 # * a zip archive of the repository
 
 # CHANGE THIS TO YOUR NAME! It must match what you configured in git.
-AUTHOR = Leonardo Uieda
+AUTHOR = AidanHernaman
 
 # Folder where output will be placed
 OUTDIR = output
 DIARY_SRC = diary.tex
 DIARY_PDF = $(patsubst %.tex, %.pdf, $(DIARY_SRC))
-LOG_FORMAT = \section*{%ai}%n%n%B%n
+LOG_FORMAT = SECTIONPLACEHOLDER*{%ai}%n%n%B%n
 AUX_TEX = diary_entries.tex diary_author.tex
 ARCHIVE = dissertation-archive.zip
 LATEX_COMPILER = latexmk -pdf -outdir=$(OUTDIR)
@@ -41,11 +41,16 @@ $(OUTDIR)/git_log.txt:
 diary_entries.tex: $(OUTDIR)/git_log.txt
 	# Remove some Markdown syntax from the file and clean it up
 	cat $< | \
+	sed -E "s/[\\](.*)/\\\\texttt\{\\\\textbackslash\{\}\1\}/g" | \
 	sed "s/ (#\([0-9]\+\))//g" | \
 	sed "s/\r//g" | \
 	sed -E "s/\[([^]]*)\]\(([^)]*)\)/\\\\href\{\2\}\{\1\}/g" | \
-	sed -E "s/\`([^\`]*)\`/\\\\texttt\{\1\}/g" | \
-    cat	> $@;
+	sed "s/&/and/g" | \
+	sed "s/%/\\\\%/g" | \
+	sed "s/\* //g" | \
+	sed "s/[_]/\\\\textunderscore\{\}/g" | \
+	sed "s/SECTIONPLACEHOLDER/\\\\section/g" | \
+	cat	> $@;
 
 diary_author.tex:
 	echo "\newcommand{\Name}{$(AUTHOR)}" > $@
