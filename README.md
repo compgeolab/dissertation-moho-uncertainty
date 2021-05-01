@@ -13,3 +13,4 @@ In this project, we will investigate the use of cross-validation analysis to est
 ## Notes
 
 - Make sure I've got explanation of cross validation correct.
+- Ask for expansion/explanation on why there are disparities between Uieda model and CRUST1.0 model.
