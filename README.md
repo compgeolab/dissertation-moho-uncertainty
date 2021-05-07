@@ -12,7 +12,4 @@ In this project, we will investigate the use of cross-validation analysis to est
 
 ## Notes
 
-- Make sure I've got explanation of cross validation correct.
-- Ask for expansion/explanation on why there are disparities between Uieda model and CRUST1.0 model.
-- How Haas, 2020 paper uses blocking - seismic regionalization
-- Help with code to add legend std and mean in corner of histograms
+No new notes at current time
