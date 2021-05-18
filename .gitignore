@@ -10,6 +10,7 @@
 *.lot
 *.out
 *.toc
+grl/output/
 dissertation/output/
 dissertation/figures/signature.*
 supplements/output/
